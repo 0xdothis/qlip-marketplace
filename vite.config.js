@@ -5,5 +5,4 @@ import macrosPlugin from "vite-plugin-babel-macros";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), macrosPlugin()],
-  base: "/qlip-marketplace/",
 });

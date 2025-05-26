@@ -17,7 +17,7 @@ function App() {
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/qlip_token" element={<QlipToken />} />
         <Route path="/whitepaper" element={<Whitepaper />} />
-        <Route path="*" element={<NotFound />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
   );
