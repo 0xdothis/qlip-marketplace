@@ -5,7 +5,6 @@ import macrosPlugin from "vite-plugin-babel-macros";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), macrosPlugin()],
-  build: {
-    outDir: "build",
-  },
+
+  base: "/",
 });
