@@ -12,7 +12,7 @@ import {
 } from "../data";
 import CardItem from "../components/CardItem/CardItem";
 import PurpleCollectibles from "../components/PurpleCollectibles/PurpleCollectibles";
-import HomepageSolution from "../components/HomePageSolution";
+import HomepageSolution from "../components/HomepageSolution";
 import HomepageToken from "../components/HomepageToken";
 import HomepageRoadmap from "../components/HomepageRoadmap";
 import HomepageGaming from "../components/HomepageGaming";
