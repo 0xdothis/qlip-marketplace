@@ -28,7 +28,7 @@ In the future i might decide to add an integration with blockchain but for now i
 1. Clone the repository
 
 ```bash
-
+https://github.com/0xdothis/qlip-marketplace.git
 ```
 
 2. Install dependencies:
