@@ -9,9 +9,9 @@ import NotFound from "./components/NotFound";
 
 function App() {
   return (
-    <BrowserRouter basename="/qlip-marketplace/">
+    <BrowserRouter>
       <Routes>
-        <Route index element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/mint_store" element={<MintStore />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/roadmap" element={<Roadmap />} />
