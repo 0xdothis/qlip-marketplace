@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import HomepageCollectibles from "../components/HomepageCollectibles/HomepageCollectibles";
 import HomepageHero from "../components/HomepageHero";
 import HomepageMintstore from "../components/HomepageMintstore";
-import HomepageSolution from "../components/HomePageSolution";
+import HomepageSolution from "../components/HomepageSolution";
 import HomepageGaming from "../components/HomepageGaming";
 import HomepageMarketplace from "../components/HomepageMarketplace";
 import HomepageRoadmap from "../components/HomepageRoadmap";
