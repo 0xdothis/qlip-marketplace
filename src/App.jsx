@@ -11,13 +11,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route index element={<Homepage />} />
         <Route path="/mint_store" element={<MintStore />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/qlip_token" element={<QlipToken />} />
         <Route path="/whitepaper" element={<Whitepaper />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
