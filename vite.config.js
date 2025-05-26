@@ -7,6 +7,5 @@ export default defineConfig({
   plugins: [react(), macrosPlugin()],
   build: {
     outDir: "build",
-    emptyOutDir: true,
   },
 });
