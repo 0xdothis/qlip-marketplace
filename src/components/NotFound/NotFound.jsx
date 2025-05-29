@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 
 function NotFound() {
-  const [timer, setTimer] = React.useState(15);
+  const [timer, setTimer] = React.useState(5);
 
   React.useEffect(() => {
     // Redirect to homepage after 3 seconds
@@ -24,6 +24,7 @@ function NotFound() {
   return (
     <Wrapper>
       <Heading>404</Heading>
+      <HeadingH2>Page not found</HeadingH2>
       <Text>You will be redirected to the homepage in {timer} seconds</Text>
     </Wrapper>
   );
@@ -41,6 +42,12 @@ const Wrapper = styled.div`
 const Heading = styled.h1`
   font-size: 6rem;
   color: var(--color-white);
+`;
+const HeadingH2 = styled.h2`
+  font-size: 3rem;
+  color: var(--color-white);
+  margin-top: -30px;
+  margin-bottom: 20px;
 `;
 
 const Text = styled.p`

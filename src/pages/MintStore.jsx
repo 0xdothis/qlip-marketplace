@@ -1,11 +1,14 @@
 import Navbar from "../components/Navbar";
-import NotFound from "../components/NotFound";
+import NotReady from "../components/NotReady";
 
 function MintStore() {
   return (
     <>
-      <Navbar value="Connect Wallet" />
-      <NotFound />
+      <Navbar
+        value="Connect Wallet"
+        style={{ backgroundColor: "var(--color-bg-dark)" }}
+      />
+      <NotReady />
     </>
   );
 }
