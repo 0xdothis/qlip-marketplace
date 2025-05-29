@@ -26,7 +26,7 @@ function Homepage() {
         <HomepageGaming />
         <HomepageMarketplace />
         <HomepageRoadmap />
-        <HomepageToken />
+        <HomepageToken heading="QLIP Token" />
         <Footer />
       </Wrapper>
     </>

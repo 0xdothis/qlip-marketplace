@@ -3,11 +3,11 @@ import Hero from "../Hero";
 import { TOKENOMICS } from "../../data";
 import { WEIGHTS } from "../../constant";
 
-function HomepageToken() {
+function HomepageToken({ heading = undefined }) {
   return (
     <Hero
-      heading="QLIP Token"
-      description="Tokenomics Break Down"
+      heading={heading}
+      description={heading ? "Tokenomics Break Down" : undefined}
       display="flex"
       flexDirection="column"
       alignItems="center"

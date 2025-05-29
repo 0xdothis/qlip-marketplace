@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <Wrapper>
-      <Logo />
+      <Logo style={{ alignSelf: "start" }} />
       <Nav>
         <LinkWrapper>
           <FooterLink to="/mint_store">Mint Store</FooterLink>
@@ -30,7 +30,7 @@ function Footer() {
 const Wrapper = styled(MaxWidthWrapper)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: start;
+  /* align-items: start; */
   gap: 20px;
   padding-top: 4rem;
   border-top: 4px solid var(--color-outline);

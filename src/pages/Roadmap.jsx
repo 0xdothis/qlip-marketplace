@@ -1,5 +1,8 @@
 import Navbar from "../components/Navbar";
-import NotReady from "../components/NotReady";
+import HomepageRoadmap from "../components/HomepageRoadmap";
+import Hero from "../components/Hero";
+import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import Footer from "../components/Footer";
 
 function Roadmap() {
   return (
@@ -8,7 +11,12 @@ function Roadmap() {
         value="Join Community"
         style={{ backgroundColor: "var(--color-bg-dark)" }}
       />
-      <NotReady />
+      <MaxWidthWrapper>
+        <Hero>
+          <HomepageRoadmap />
+          <Footer />
+        </Hero>
+      </MaxWidthWrapper>
     </>
   );
 }

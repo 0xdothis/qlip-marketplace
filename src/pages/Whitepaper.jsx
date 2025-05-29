@@ -275,7 +275,7 @@ Here NFT creators can easily sell their Art in various formats in these categori
           </ImgWrapper>
         </ImgContent>
       </PurpleCollectibles>
-      <HomepageToken />
+      <HomepageToken heading="QLIP Token" />
       <PurpleCollectibles style={{ display: "revert" }}>
         <HeadingH4 style={{ textAlign: "center" }}>
           TOKENOMICS BREAK DOWN TOTAL SUPPLY OF 10,000,000 $QLP
