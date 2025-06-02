@@ -17,6 +17,7 @@ import HomepageToken from "../components/HomepageToken";
 import HomepageRoadmap from "../components/HomepageRoadmap";
 import HomepageGaming from "../components/HomepageGaming";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import { QUERIES } from "../constant";
 
 function Whitepaper() {
   return (
@@ -65,31 +66,31 @@ function Whitepaper() {
           Qlip is a Cross Chain NFT platform that opens new frontiers in the NFT
           space, for;
         </Text>
+        <Wrapper>
+          <CardItem
+            data={PLATFORM}
+            display="flex"
+            gap="24px"
+            width="max-content"
+            alignItems="center"
+            padding="1rem"
+          />
+        </Wrapper>
       </Hero>
-      <Wrapper>
-        <CardItem
-          data={PLATFORM}
-          display="flex"
-          gap="24px"
-          width="max-content"
-          alignItems="center"
-          padding="1rem"
-        />
-      </Wrapper>
       <Hero>
         <HeadingH5>Industry Use cases to Qlip?</HeadingH5>
         <Text>Qlip provides an entry into the NFT market for;</Text>
+        <Wrapper>
+          <CardItem
+            data={USE_CASES}
+            display="flex"
+            gap="24px"
+            width="max-content"
+            alignItems="center"
+            padding="1rem"
+          />
+        </Wrapper>
       </Hero>
-      <Wrapper>
-        <CardItem
-          data={USE_CASES}
-          display="flex"
-          gap="24px"
-          width="max-content"
-          alignItems="center"
-          padding="1rem"
-        />
-      </Wrapper>
 
       <Hero
         heading="QLIP MarketPlace"
@@ -440,16 +441,31 @@ const WhitepaperHero = styled.section`
   background-color: var(--color-primary);
   margin-left: -72px;
   margin-right: -72px;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 `;
 
 const HeadingH2 = styled.h2`
   font-size: var(--font-h2);
   margin-top: 4rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    text-align: center;
+    width: 100%;
+  }
 `;
 
 const DescriptionText = styled.p`
   max-width: 62ch;
   color: var(--color-text-dark);
+
+  @media ${QUERIES.laptopAndSmaller} {
+    /* max-width: fit-content; */
+    /* margin: 0 auto; */
+  }
 `;
 
 const HeadingH5 = styled.h5`
@@ -467,6 +483,7 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   gap: 24px;
   width: 100%;
+  margin-top: 2rem;
 `;
 
 const Notice = styled.div`
@@ -480,6 +497,10 @@ const Notice = styled.div`
   &::selection {
     background-color: var(--color-primary);
     color: var(--color-white);
+  }
+
+  @media ${QUERIES.laptopAndSmaller} {
+    width: revert;
   }
 `;
 
@@ -510,6 +531,10 @@ const TextContent = styled.div`
 
   ${HeadingH2} {
     width: 600px;
+
+    @media ${QUERIES.tabletAndSmaller} {
+      width: fit-content;
+    }
   }
 `;
 
@@ -517,9 +542,19 @@ const DisplayText = styled.div`
   font-size: var(--font-h6);
   width: 35ch;
   margin-top: 1rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: fit-content;
+    margin-bottom: 2rem;
+    /* text-align: center; */
+  }
 `;
 
-const ImgContent = styled.div``;
+const ImgContent = styled.div`
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
+`;
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -536,10 +571,18 @@ const ContentWrapper = styled.div`
   &:last-of-type {
     margin-top: 2rem;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    margin: 0 auto;
+  }
 `;
 const List = styled.ol`
   list-style: decimal;
   margin-left: 1rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    /* margin: auto; */
+  }
 `;
 
 const ListItem = styled.li`
@@ -613,10 +656,18 @@ const SolutionText = styled.ol`
   ${ListItem} {
     color: var(--color-text-dark);
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: revert;
+  }
 `;
 
 const HeadingH4 = styled.h4`
   font-size: var(--font-h4);
+
+  @media ${QUERIES.laptopAndSmaller} {
+    text-align: center;
+  }
 `;
 
 const Table = styled.table`
@@ -625,6 +676,10 @@ const Table = styled.table`
   height: 600px;
   font-size: var(--font-body);
   margin-top: 3rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-top: 1.5rem;
+  }
 `;
 
 const TableHeading = styled.thead`
@@ -644,6 +699,12 @@ const TableData = styled.td`
 
   &:not(:last-child) {
     border-right: 1px solid var(--color-white);
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: fit-content;
+    padding: 0.5rem !important;
+    font-size: var(--font-small);
   }
 `;
 

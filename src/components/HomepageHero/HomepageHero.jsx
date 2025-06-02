@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import UnstyledButton from "../UnstyledButton";
-import { WEIGHTS } from "../../constant";
+import { QUERIES, WEIGHTS } from "../../constant";
 import Hero from "../Hero";
 
 function HomepageHero() {

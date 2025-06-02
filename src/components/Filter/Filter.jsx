@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Icon from "../Icon";
+import { QUERIES } from "../../constant";
 
 function Filter({ ...delegated }) {
   return (
@@ -25,12 +26,25 @@ function Filter({ ...delegated }) {
 const Wrapper = styled.ul`
   display: flex;
   gap: 3rem;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const FilterItem = styled.li`
   display: flex;
   align-items: center;
   color: var(--color-text-dark);
+
+  @media ${QUERIES.laptopAndSmaller} {
+    font-size: var(--font-small);
+  }
 
   &:last-of-type {
     color: var(--color-white);

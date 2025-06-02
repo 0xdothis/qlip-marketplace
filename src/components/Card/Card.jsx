@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { QUERIES } from "../../constant";
 
 function Card({
   imgSrc,
@@ -68,7 +69,7 @@ function Card({
           </span>
         </small>
       ) : null}
-      <HeadingH2>{heading}</HeadingH2>
+      <HeadingH4>{heading}</HeadingH4>
       <DescriptionText style={{ "--width": width }}>
         {description}
       </DescriptionText>
@@ -78,18 +79,39 @@ function Card({
 
 const Wrapper = styled.article`
   padding-bottom: var(--padding-bottom);
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-bottom: 1rem;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: revert;
+  }
 `;
 
-const HeadingH2 = styled.h4`
+const HeadingH4 = styled.h4`
   font-size: var(--font-heading);
   margin-top: var(--margin-top);
   margin-bottom: var(--margin-bottom);
+  width: max-content;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    width: fit-content;
+  }
 `;
 
 const DescriptionText = styled.p`
   width: var(--width);
   font-size: var(--font-body);
   color: var(--color-text-light);
+
+  @media ${QUERIES.laptopAndSmaller} {
+    width: fit-content;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: var(--font-small);
+  }
 `;
 
 const ImgWrapper = styled.div`
@@ -110,6 +132,11 @@ const ImgWrapper = styled.div`
 
   border: ${(p) =>
     !p.background ? undefined : "2px solid var(--color-white)"};
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 90px;
+    padding: 1.5rem;
+  }
 `;
 
 const Img = styled.img`

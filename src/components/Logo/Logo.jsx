@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
+import { QUERIES } from "../../constant";
 
 function Logo({ ...delegated }) {
   return (
     <Wrapper to="/" {...delegated}>
-      <ImgWrapper>
+      <ImgWrapper ImgWrapper>
         <Picture>
           <source
             type="image/png"
@@ -23,10 +24,10 @@ function Logo({ ...delegated }) {
 
 const Wrapper = styled(Link)`
   display: flex;
-  gap: 0 16px;
-  text-decoration: none;
+  align-items: center;
+  gap: 16px;
   color: var(--color-white);
-  align-items: flex-start;
+  text-decoration: none;
 
   &:focus {
     outline: none;
@@ -34,8 +35,8 @@ const Wrapper = styled(Link)`
 `;
 
 const ImgWrapper = styled.div`
-  height: 35px;
-  width: 35px;
+  height: fit-content;
+  width: 40px;
 `;
 
 const Img = styled.img`
@@ -47,9 +48,9 @@ const Picture = styled.picture``;
 
 const LogoText = styled.h1`
   font-family: "Unione", sans-serif;
-  font-size: var(--font-h5);
-  line-height: var(--font-h5);
-  margin-top: -3px;
+  font-size: 34px;
+  line-height: 34px;
+  align-self: flex-start;
 `;
 
 export default Logo;

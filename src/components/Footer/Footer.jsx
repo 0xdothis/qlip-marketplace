@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "../Logo";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import { Link } from "react-router-dom";
+import { QUERIES } from "../../constant";
 
 function Footer() {
   return (
@@ -44,11 +45,19 @@ const FooterLink = styled(Link)`
   &:not(:last-of-type) {
     margin-bottom: 1rem;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 14px;
+  }
 `;
 
 const Nav = styled.div`
   display: flex;
   gap: 100px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 40px;
+  }
 `;
 
 const LinkWrapper = styled.ul`

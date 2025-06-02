@@ -10,6 +10,7 @@ import HomepageToken from "../components/HomepageToken";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import { QUERIES } from "../constant";
 
 function Homepage() {
   return (
@@ -37,5 +38,10 @@ const Wrapper = styled(MaxWidthWrapper)`
   padding-left: 64px;
   padding-right: 64px;
   margin-top: 64px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 `;
 export default Homepage;

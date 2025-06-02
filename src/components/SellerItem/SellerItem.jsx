@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { RANKED_COLORS } from "../../data";
 import SellerCard from "../SellerCard/SellerCard";
+import { QUERIES } from "../../constant";
 
 function SellerItem() {
   return (
@@ -22,6 +23,11 @@ const Wrapper = styled.div`
   /* To hide excess content spilling out the container */
   overflow: hidden;
   /* background-color: white; */
+
+  @media ${QUERIES.laptopAndSmaller} {
+    overflow: auto;
+    margin-right: -16px;
+  }
 `;
 
 const InnerWrapper = styled.div`

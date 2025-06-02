@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { WEIGHTS } from "../../constant";
+import { QUERIES, WEIGHTS } from "../../constant";
 
 function Hero({
   children,
@@ -27,14 +27,22 @@ const Wrapper = styled.section`
   padding-right: var(--spacing-right);
   width: 100%;
 
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-top: 2rem;
+  }
 `;
 
 const Heading = styled.h1`
   font-size: ${(p) => (p.size ? p.size : "var(--font-h1)")};
   margin-bottom: 1rem;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    /* text-align: center; */
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-bottom: 1rem;
+  }
 `;
 
 const DescriptionText = styled.p`
@@ -44,6 +52,10 @@ const DescriptionText = styled.p`
   font-size: var(--font-body);
   font-weight: ${WEIGHTS.medium};
   margin-bottom: 2.5rem;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    max-width: 500px;
+  }
 `;
 
 export default Hero;

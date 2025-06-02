@@ -11,6 +11,9 @@ import SellerItem from "../components/SellerItem";
 import Icon from "../components/Icon";
 import SearchInput from "../components/SearchInput";
 import Filter from "../components/Filter";
+import NFTItem from "../components/NFTItem/NFTItem";
+import Footer from "../components/Footer";
+import { QUERIES } from "../constant";
 
 function Marketplace() {
   return (
@@ -58,7 +61,11 @@ function Marketplace() {
           </SearchWrapper>
           <Filter marginTop="5rem" />
         </Hero>
+        <Hero paddingTop="1rem">
+          <NFTItem />
+        </Hero>
       </Wrapper>
+      <Footer />
     </>
   );
 }
@@ -70,6 +77,12 @@ const CardWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(356px, 1fr));
   width: 100%;
   gap: 48px;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 24px;
+  }
 `;
 
 const InputWrapper = styled.div`
@@ -104,6 +117,11 @@ const SearchWrapper = styled.div`
   display: flex;
   gap: 48px;
   align-items: center;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const HeadingH2 = styled.h2`

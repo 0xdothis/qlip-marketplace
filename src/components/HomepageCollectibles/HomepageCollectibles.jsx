@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 
 import Hero from "../Hero";
 import UnstyledButton from "../UnstyledButton";
+import { QUERIES } from "../../constant";
 
 function HomepageCollectibles() {
   return (
@@ -62,6 +63,15 @@ const Wrapper = styled.div`
   gap: 150px;
   justify-content: center;
   align-items: center;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    gap: 100px;
+  }
 `;
 
 const Card = styled.article`
@@ -69,10 +79,23 @@ const Card = styled.article`
   border: var(--border);
   padding: var(--padding);
   justify-self: center;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    max-width: 600px;
+    width: 100%;
+
+    &:last-of-type {
+      width: 300px;
+    }
+  }
 `;
 
 const HeadingH1 = styled.h1`
   font-size: var(--font-h1);
+
+  @media ${QUERIES.phoneAndSmaller} {
+    text-align: center;
+  }
 `;
 
 const DescriptionText = styled.p`
@@ -80,6 +103,14 @@ const DescriptionText = styled.p`
   font-size: var(--font-body);
   color: var(--color-text-light);
   margin-top: 1rem;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    width: 100%;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    text-align: center;
+  }
 `;
 
 const ClaimButton = styled(UnstyledButton)`
@@ -88,6 +119,10 @@ const ClaimButton = styled(UnstyledButton)`
   padding: 1.2rem 3rem;
   border-radius: 100px;
   margin-top: 2rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    justify-self: center;
+  }
 `;
 
 const Img = styled.img`

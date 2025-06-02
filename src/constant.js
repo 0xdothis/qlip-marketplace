@@ -36,20 +36,26 @@ export const WEIGHTS = {
 
 export const BREAKPOINTS = {
   phone: 600,
-  tablet: 750,
+  tablet: 950,
   laptop: 1300,
 };
 
+export const QUERIES = {
+  phoneAndSmaller: `(max-width:${BREAKPOINTS.phone / 16}rem)`,
+  tabletAndSmaller: `(max-width:${BREAKPOINTS.tablet / 16}rem)`,
+  laptopAndSmaller: `(max-width:${BREAKPOINTS.laptop / 16}rem)`,
+};
+
 export const FONT_SIZES = {
-  small: 16,
-  body: 18,
-  h1: 64,
-  h2: 56,
-  h3: 48,
-  h4: 40,
-  h5: 32,
-  h6: 24,
-  logo: 35,
+  small: `clamp(0.75rem, 0.571rem + 0.476vw, 1rem)`,
+  body: `clamp(1rem, 0.911rem + 0.238vw, 1.125rem)`,
+  h1: `clamp(2.5rem, 1.429rem + 2.857vw, 4rem)`,
+  h2: `clamp(2rem, 0.929rem + 2.857vw, 3.5rem)`,
+  h3: `clamp(1.5rem, 0.429rem + 2.857vw, 3rem)`,
+  h4: `clamp(1.125rem, 0.143rem + 2.619vw, 2.5rem)`,
+  h5: `clamp(0.625rem, 0rem + 1.667vw, 1.5rem)`,
+  h6: `clamp(0.625rem, 0rem + 1.667vw, 1.5rem)`,
+  logo: `clamp(1.5rem, 1.009rem + 1.31vw, 2.188rem)`,
 };
 
 export const SPACING = {

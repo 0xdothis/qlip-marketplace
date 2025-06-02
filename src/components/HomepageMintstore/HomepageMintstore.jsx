@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 
 import Hero from "../Hero";
 import UnstyledButton from "../UnstyledButton";
+import { QUERIES } from "../../constant";
 
 function HomepageMintstore() {
   return (
@@ -102,6 +103,14 @@ const Wrapper = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
   position: relative;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    max-width: 35rem;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: 100%;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -119,6 +128,10 @@ const IconWrapper = styled.div`
   left: var(--left);
   right: var(--right);
   transform: translate(var(--translateX), var(--translateY));
+
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const ImgWrapper = styled.div`
@@ -130,6 +143,12 @@ const ImgWrapper = styled.div`
   display: flex;
   box-shadow: 0 6px 10px -2px hsl(157deg 85% 37% / 0.4);
 
+  @media ${QUERIES.laptopAndSmaller} {
+    padding: 0.65rem;
+    height: 40px;
+    width: 40px;
+  }
+
   & img {
     width: 100%;
   }
@@ -139,6 +158,14 @@ const Text = styled.span`
   font-size: var(--font-body);
   color: var(--color-secondary);
   margin-right: 2rem;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    margin-right: 0rem;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    font-size: var(--font-small);
+  }
 `;
 
 const HeadingL6 = styled.h6`
@@ -157,6 +184,11 @@ const BrowseButton = styled(UnstyledButton)`
   border-radius: 100px;
   font-size: var(--font-h6);
   margin-top: 2rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 0.5rem 2rem;
+    font-size: var(--font-small);
+  }
 `;
 
 export default HomepageMintstore;

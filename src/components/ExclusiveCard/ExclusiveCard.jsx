@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { QUERIES } from "../../constant";
 
 function ExclusiveCard({
   imgSrc,
@@ -43,6 +44,10 @@ const Article = styled.article`
   width: 356px;
   border: 8px solid var(--color-outline);
   border-radius: 16px;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    width: revert;
+  }
 `;
 
 const Picture = styled.picture`

@@ -91,14 +91,14 @@ html {
 
 
 /* Font-sizes */
---font-h1: calc(${FONT_SIZES.h1 / 16} * 1rem);
---font-h2: calc(${FONT_SIZES.h2 / 16} * 1rem);
---font-h3: calc(${FONT_SIZES.h3 / 16} * 1rem);
---font-h4: calc(${FONT_SIZES.h4 / 16} * 1rem);
---font-h5: calc(${FONT_SIZES.h5 / 16} * 1rem);
---font-h6: calc(${FONT_SIZES.h6 / 16} * 1rem);
---font-body: calc(${FONT_SIZES.body / 16} * 1rem);
---font-small: calc(${FONT_SIZES.small / 16} * 1rem);
+--font-h1: ${FONT_SIZES.h1};
+--font-h2: ${FONT_SIZES.h2};
+--font-h3: ${FONT_SIZES.h3};
+--font-h4: ${FONT_SIZES.h4};
+--font-h5: ${FONT_SIZES.h5};
+--font-h6: ${FONT_SIZES.h6};
+--font-body: ${FONT_SIZES.body};
+--font-small: ${FONT_SIZES.small};
 
 --font-normal: ${WEIGHTS.normal};
 --font-medium: ${WEIGHTS.medium};
@@ -118,6 +118,9 @@ html {
 
   /* change scrollbar width */
   scrollbar-width: thin;
+
+
+  
 }
 
 

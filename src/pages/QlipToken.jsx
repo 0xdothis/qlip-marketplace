@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import HomepageToken from "../components/HomepageToken";
 import PurpleCollectibles from "../components/PurpleCollectibles";
 import Footer from "../components/Footer";
+import { QUERIES } from "../constant";
 
 function QlipToken() {
   return (
@@ -21,8 +22,8 @@ function QlipToken() {
               marginLeft: "0",
               marginRight: "0",
               gridTemplateColumns: "1fr",
-              paddingLeft: "0",
-              paddingRight: "0",
+              paddingLeft: "64px",
+              paddingRight: "64px",
               width: "100%",
             }}
           >
@@ -218,6 +219,15 @@ const TextContent = styled.div`
     /* width: 600px; */
     align-self: center;
     margin-bottom: 2rem;
+
+    @media ${QUERIES.phoneAndSmaller} {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media ${QUERIES.laptopAndSmaller} {
+    width: 100%;
+    align-items: center;
   }
 `;
 
@@ -225,6 +235,11 @@ const DisplayText = styled.div`
   font-size: var(--font-h6);
   width: 35ch;
   margin-top: 1rem;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    max-width: fit-content;
+    /* text-align: center; */
+  }
 `;
 
 const ImgContent = styled.div``;
@@ -258,6 +273,10 @@ const ListItem = styled.li`
   &:not(:last-of-type) {
     margin-bottom: 1rem;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: var(--font-small);
+  }
 `;
 
 const Img = styled.img`
@@ -274,6 +293,10 @@ const Table = styled.table`
   height: 600px;
   font-size: var(--font-body);
   margin-top: 3rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-top: 1.5rem;
+  }
 `;
 
 const TableHeading = styled.thead`
@@ -285,6 +308,7 @@ const TableHeading = styled.thead`
 
 const TableBody = styled.tbody`
   /* text-align: center; */
+  width: 200px;
 `;
 
 const TableData = styled.td`
@@ -293,6 +317,12 @@ const TableData = styled.td`
 
   &:not(:last-child) {
     border-right: 1px solid var(--color-white);
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: fit-content;
+    padding: 0.5rem !important;
+    font-size: var(--font-small);
   }
 `;
 

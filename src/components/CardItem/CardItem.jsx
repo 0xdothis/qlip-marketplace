@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import Card from "../Card";
+import { QUERIES } from "../../constant";
 
 function CardItem({
   border,
@@ -61,6 +62,15 @@ const Wrapper = styled.div`
 
   border: ${(p) =>
     p.background ? undefined : "2px solid var(--color-outline)"};
+
+  @media ${QUERIES.laptopAndSmaller} {
+    /* width: fit-content; */
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    /* width: fit-content; */
+    padding: 1.5rem !important;
+  }
 `;
 
 export default CardItem;

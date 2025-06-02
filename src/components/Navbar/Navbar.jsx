@@ -1,16 +1,22 @@
+import React from "react";
 import styled from "styled-components/macro";
 import { NavLink } from "react-router-dom";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import UnstyledButton from "../UnstyledButton";
 import Logo from "../Logo";
+import { QUERIES } from "../../constant";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import Icon from "../Icon";
 
 function Navbar({ value, ...delegated }) {
+  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
+
   return (
     <BackgroundWrapper {...delegated}>
       <Wrapper>
         <Logo />
         <Side />
-        <NavWrapper>
+        <DesktopNav>
           <Link to="/mint_store">Mint Store</Link>
 
           <Link to="/marketplace">Marketplace</Link>
@@ -20,10 +26,19 @@ function Navbar({ value, ...delegated }) {
           <Link to="/qlip_token">QLIP Token</Link>
 
           <Link to="/whitepaper">Whitepaper</Link>
-        </NavWrapper>
-
+        </DesktopNav>
         <JoinButton>{value}</JoinButton>
+        <MobileActions>
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+            <Icon id="menu" />
+          </UnstyledButton>
+        </MobileActions>
       </Wrapper>
+      <MobileMenu
+        isOpen={showMobileMenu}
+        onDismiss={() => setShowMobileMenu(false)}
+        value={value}
+      />
     </BackgroundWrapper>
   );
 }
@@ -43,17 +58,25 @@ const Wrapper = styled(MaxWidthWrapper)`
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-body);
+
+  @media ${QUERIES.laptopAndSmaller} {
+    /* display: none; */
+  }
 `;
 
 const Side = styled.div`
   max-width: 100px;
 `;
 
-const NavWrapper = styled.nav`
+const DesktopNav = styled.nav`
   display: flex;
   justify-content: center;
   gap: 0 8px;
   align-self: center;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    display: none;
+  }
 `;
 
 const Link = styled(NavLink)`
@@ -74,5 +97,17 @@ const JoinButton = styled(UnstyledButton)`
   padding: 0.75rem 1.75rem;
   border-radius: 50px;
   font-size: inherit;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    display: none;
+  }
+`;
+
+const MobileActions = styled.div`
+  display: none;
+
+  @media ${QUERIES.laptopAndSmaller} {
+    display: revert;
+  }
 `;
 export default Navbar;
