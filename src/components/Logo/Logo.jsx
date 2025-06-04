@@ -5,7 +5,7 @@ import { QUERIES } from "../../constant";
 function Logo({ ...delegated }) {
   return (
     <Wrapper to="/" {...delegated}>
-      <ImgWrapper ImgWrapper>
+      <ImgWrapper>
         <Picture>
           <source
             type="image/png"
@@ -25,7 +25,7 @@ function Logo({ ...delegated }) {
 const Wrapper = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   color: var(--color-white);
   text-decoration: none;
 
@@ -36,7 +36,7 @@ const Wrapper = styled(Link)`
 
 const ImgWrapper = styled.div`
   height: fit-content;
-  width: 40px;
+  width: calc((40 / 16) * 1rem);
 `;
 
 const Img = styled.img`
@@ -47,10 +47,10 @@ const Img = styled.img`
 const Picture = styled.picture``;
 
 const LogoText = styled.h1`
-  font-family: "Unione", sans-serif;
-  font-size: 34px;
-  line-height: 34px;
-  align-self: flex-start;
+  font-family: "Gilroy", sans-serif;
+  font-size: calc((34 / 16) * 1rem);
+  line-height: calc((34 / 16) * 1rem);
+  margin-top: -5px;
 `;
 
 export default Logo;

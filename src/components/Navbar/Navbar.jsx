@@ -72,7 +72,7 @@ const DesktopNav = styled.nav`
   display: flex;
   justify-content: center;
   gap: 0 8px;
-  align-self: center;
+  /* align-self: center; */
 
   @media ${QUERIES.laptopAndSmaller} {
     display: none;
