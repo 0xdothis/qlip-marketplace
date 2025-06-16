@@ -12,7 +12,7 @@ import {
   ArrowRight,
   Search,
   Sliders,
-} from "react-feather";
+} from "lucide-react";
 
 const icons = {
   twitter: Twitter,
