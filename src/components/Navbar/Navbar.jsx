@@ -9,8 +9,6 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 import Icon from "../Icon";
 
 function Navbar({ value, ...delegated }) {
-  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
   return (
     <BackgroundWrapper {...delegated}>
       <Wrapper>
@@ -29,16 +27,9 @@ function Navbar({ value, ...delegated }) {
         </DesktopNav>
         <JoinButton>{value}</JoinButton>
         <MobileActions>
-          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
-            <Icon id="menu" />
-          </UnstyledButton>
+          <MobileMenu value={value} />
         </MobileActions>
       </Wrapper>
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-        value={value}
-      />
     </BackgroundWrapper>
   );
 }

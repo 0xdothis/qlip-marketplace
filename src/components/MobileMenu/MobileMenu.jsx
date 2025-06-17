@@ -1,5 +1,6 @@
+import React from "react";
 import styled from "styled-components/macro";
-import { DialogOverlay, DialogContent } from "@reach/dialog";
+import { Dialog } from "radix-ui";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 import UnstyledButton from "../UnstyledButton";
@@ -7,35 +8,53 @@ import { QUERIES, WEIGHTS } from "../../constant";
 import { NavLink } from "react-router-dom";
 
 function MobileMenu({ isOpen, onDismiss, value }) {
-  if (!isOpen) return null;
+  const [showTrigger, setShowTrigger] = React.useState(true);
 
   return (
-    <Overlay isOpen={isOpen} onDismiss={onDismiss}>
-      <Content aria-label="menu">
-        <CloseButton onClick={onDismiss}>
-          <Icon id="close" size={32} />
-          <VisuallyHidden>Dismiss Menu</VisuallyHidden>
-        </CloseButton>
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        {showTrigger && (
+          <CloseButton onClick={() => setShowTrigger(false)}>
+            <Icon id="menu" size={32} />
+            <VisuallyHidden>Dismiss Menu</VisuallyHidden>
+          </CloseButton>
+        )}
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Overlay />
+        <Content>
+          <Dialog.Title>
+            <VisuallyHidden>Navigation Links</VisuallyHidden>
+          </Dialog.Title>
+          <Dialog.Description>
+            <VisuallyHidden>Links to each section of the page</VisuallyHidden>
+          </Dialog.Description>
+          <Nav>
+            <Link to="/">Home</Link>
+            <Link to="/mint_store">Mint Store</Link>
 
-        <Nav>
-          <Link to="/">Home</Link>
-          <Link to="/mint_store">Mint Store</Link>
+            <Link to="/marketplace">Marketplace</Link>
 
-          <Link to="/marketplace">Marketplace</Link>
+            <Link to="/roadmap">Roadmap</Link>
 
-          <Link to="/roadmap">Roadmap</Link>
+            <Link to="/qlip_token">QLIP Token</Link>
 
-          <Link to="/qlip_token">QLIP Token</Link>
-
-          <Link to="/whitepaper">Whitepaper</Link>
-        </Nav>
-        <JoinButton>{value}</JoinButton>
-      </Content>
-    </Overlay>
+            <Link to="/whitepaper">Whitepaper</Link>
+          </Nav>
+          <JoinButton>{value}</JoinButton>
+          <Dialog.Close asChild>
+            <CloseButton onClick={() => setShowTrigger(true)}>
+              <Icon id="close" size={32} />
+              <VisuallyHidden>Dismiss Menu</VisuallyHidden>
+            </CloseButton>
+          </Dialog.Close>
+        </Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
 
-const Overlay = styled(DialogOverlay)`
+const Overlay = styled(Dialog.Overlay)`
   position: fixed;
   right: 0;
   left: 0;
@@ -49,20 +68,24 @@ const Overlay = styled(DialogOverlay)`
 const CloseButton = styled(UnstyledButton)`
   position: absolute;
   padding: 16px;
-  right: 10px;
+  right: 0px;
   top: 10px;
   color: var(--color-white);
 `;
 
-const Content = styled(DialogContent)`
+const Content = styled(Dialog.Content)`
   background-color: var(--color-bg-dark);
-  color: var(--color-white);
-  height: 100%;
+  border-radius: 6px;
+  position: absolute;
+  top: -70px;
+  right: 0;
+
   width: 350px;
+  height: 100%;
+  padding: 32px;
   display: flex;
   flex-direction: column;
-
-  padding: 32px;
+  color: var(--color-white);
 `;
 
 const Nav = styled.nav`
@@ -70,7 +93,6 @@ const Nav = styled.nav`
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  /* margin: auto 0; */
   gap: 24px;
   align-self: center;
 
